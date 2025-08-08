@@ -1,796 +1,160 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;600&display=swap');
 
-body {
-  font-family: 'Muli', sans-serif;
-  margin: 0;
-  background-color: #000;
-  color: white;
-  text-align: center;
+/* ===== Base ===== */
+:root{
+  /* Altura do carrossel responsiva: entre 180px e 280px, usando a altura da viewport no meio */
+  --carousel-h: clamp(180px, 35vh, 280px);
+  --btn-font: clamp(17px, 3.8vw, 20px);
+  --emoji-font: clamp(22px, 6vw, 28px);
+  --body-font: clamp(16px, 2.6vw, 18px);
 }
 
-html {
-  background-color: #000;
-}
-
-
-.topo {
-  background-color: #e52a18;
-  color: #030304;
-  padding-bottom: 20px;
-  text-align: center;
-}
-
-.topo h1 {
-  margin: 20px 0 10px;
-  font-size: 32px;
-}
-
-.topo p {
-  margin: 0;
-  font-size: 16px;
-}
-
-.carousel-inner img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px auto;
-}
-
-
-
-.buttons a {
-  display: block;
-  margin: 12px 0;
-  padding: 15px;
-  background-color: #75b834;
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  width: 85%;
-  max-width: 350px;
-  font-size: 18px;
-}
-
-.buttons a:hover {
-  background-color: #75b834;
-}
-
-.formulario {
-  padding: 20px;
-}
-
-.formulario h2,
-.map h2 {
-  margin: 8px 0;
-  text-align: center;
-  margin-left: 0;
-}
-
-.formulario form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.formulario input,
-.formulario button {
-  margin: 8px 0;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.formulario button {
-  background-color: #8B0000;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.formulario button:hover {
-  background-color: #e52a18;
-}
-
-.map {
-  margin: 60px 0;
-  text-align: center;
-}
-
-.map h2 {
-  font-size: 28px;
-  color: #e52a18;
-  margin-bottom: 20px;
-}
-
-.map iframe {
-  width: 90%;
-  max-width: 700px;
-  height: 400px;
-  border: 4px solid #e52a18;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
-
-html,
-body {
-  font-family: 'Muli', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #000;
-  color: white;
-  text-align: center;
-  height: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
   height: 100%;
-  background-color: #000;
-}
-
-
-body > * {
-  background-color: transparent;
-}
-
-.topo {
-  background-color: #e52a18;
-  color: #030304;
-  padding-bottom: 20px;
-  text-align: center;
-  margin-bottom: 0;
-}
-
-
-.topo h1 {
-  margin: 20px 0 10px;
-  font-size: 32px;
-}
-
-.topo p {
-  margin: 0;
-  font-size: 16px;
-}
-
-.carousel-inner img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px auto;
-  background-color: #000;
-}
-
-.buttons a {
-  display: block;
-  margin: 12px 0;
-  padding: 15px;
-  background-color: #75b834;
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  width: 85%;
-  max-width: 350px;
-  font-size: 18px;
-}
-
-.buttons a:hover {
-  background-color: #5ca428;
-}
-
-
-.formulario {
-  padding: 20px;
-}
-
-.formulario h2,
-.map h2 {
-  margin: 8px 0;
-  text-align: center;
-  color: white;
-}
-
-.formulario form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.formulario input,
-.formulario button {
-  margin: 8px 0;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.formulario button {
-  background-color: #8B0000;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.formulario button:hover {
-  background-color: #e52a18;
-}
-
-.map {
-  margin: 60px 0 120px 0;
-  text-align: center;
-}
-
-.map h2 {
-  font-size: 28px;
-  color: #e52a18;
-  margin-bottom: 20px;
-}
-
-.map iframe {
-  width: 90%;
-  max-width: 700px;
-  height: 400px;
-  border: 4px solid #e52a18;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.carousel,
-.carousel-inner,
-.carousel-item,
-.carousel-inner img {
-  background-color: #000 !important;
-}
-
-.carousel-inner {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.carousel-item {
-  padding: 0 !important;
-  margin: 0 !important;
-} */
-
-
-
-/* 
-@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
-
-html, body {
   font-family: 'Muli', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #000 !important;
-  color: white;
+  background: #000;
+  color: #fff;
   text-align: center;
-  height: 100%;
+  -webkit-text-size-adjust: 100%; /* evita zoom estranho em iOS */
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+body > * { background-color: transparent; }
 
-body > * {
-  background-color: transparent !important;
-}
-
-.topo {
-  background-color: #e52a18;
-  color: #030304;
-  padding-bottom: 20px;
-  text-align: center;
-  margin-bottom: 0 !important;
-}
-
-.topo h1 {
-  margin: 20px 0 10px;
-  font-size: 32px;
-}
-
-.topo p {
-  margin: 0;
-  font-size: 16px;
-}
-
-.carousel-wrapper {
-  background-color: #000 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.carousel-inner img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-  background-color: #000;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px auto;
-  background-color: #000;
-}
-
-.buttons a {
-  display: block;
-  margin: 12px 0;
-  padding: 15px;
-  background-color: #75b834;
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  width: 85%;
-  max-width: 350px;
-  font-size: 18px;
-}
-
-.buttons a:hover {
-  background-color: #5ca428;
-}
-
-.formulario {
-  padding: 20px;
-}
-
-.formulario h2,
-.map h2 {
-  margin: 8px 0;
-  text-align: center;
-  color: white;
-}
-
-.formulario form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.formulario input,
-.formulario button {
-  margin: 8px 0;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.formulario button {
-  background-color: #8B0000;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.formulario button:hover {
-  background-color: #e52a18;
-}
-
-.map {
-  margin: 60px 0 150px 0;
-  text-align: center;
-}
-
-.map h2 {
-  font-size: 28px;
-  color: #e52a18;
-  margin-bottom: 20px;
-}
-
-.map iframe {
-  width: 90%;
-  max-width: 700px;
-  height: 400px;
-  border: 4px solid #e52a18;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}*/
-
-
-
-
-
-
-
-
-/* @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  font-family: 'Muli', sans-serif;
-  background-color: #000;
-  color: white;
-  text-align: center;
-}
-
-body > * {
-  background-color: transparent;
-}
-
-.topo {
-  background-color: #e52a18;
-  color: #030304;
-  padding-bottom: 20px;
-  text-align: center;
-  margin-bottom: 0;
-}
-
-.topo h1 {
-  margin: 10px 0 8px;
-  font-size: 32px;
-}
-
-.topo p {
-  margin: 0;
-  font-size: 16px;
-}
-
-.carousel,
-.carousel-inner,
-.carousel-item,
-.carousel-inner img {
-  background-color: #000 !important;
-}
-
-.carousel-inner {
-  padding: 0 !important;
-  margin: 0 !important;
-  transition: transform 0.6s ease-in-out !important;
-}
-
-.carousel-item {
-  padding: 0 !important;
-  margin: 0 !important;
-  transition: opacity 0.6s ease-in-out;
-}
-
-.carousel-inner img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-}
-
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 25px 0;
-}
-
-.logo-img {
-  max-width: 220px;
-  width: 90%;
-  height: auto;
-  display: block;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px auto;
-  background-color: #000;
-}
-
-.buttons a {
-  display: block;
-  margin: 12px 0;
-  padding: 15px;
-  background-color: #75b834;
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  width: 85%;
-  max-width: 350px;
-  font-size: 18px;
-}
-
-.buttons a:hover {
-  background-color: #5ca428;
-}
-
-.formulario {
-  padding: 20px;
-}
-
-.formulario h2,
-.map h2 {
-  margin: 8px 0;
-  text-align: center;
-  color: white;
-}
-
-.formulario form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.formulario input,
-.formulario button {
-  margin: 8px 0;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.formulario button {
-  background-color: #8B0000;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.formulario button:hover {
-  background-color: #e52a18;
-}
-
-.map {
-  margin: 60px 0 120px 0;
-  text-align: center;
-}
-
-.map h2 {
-  font-size: 28px;
-  color: #e52a18;
-  margin-bottom: 20px;
-}
-
-.map iframe {
-  width: 90%;
-  max-width: 700px;
-  height: 400px;
-  border: 4px solid #e52a18;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-} */
-
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
-
-html,
-body {
-  font-family: 'Muli', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #000;
-  color: white;
-  text-align: center;
-  height: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  background-color: #000;
-}
-
-/* Força o fundo preto em toda a estrutura visível */
-body > * {
-  background-color: transparent;
-}
-
+/* ===== Topo / Cabeçalho ===== */
 .topo {
   background-color: #030304;
   color: #e52a18;
-  padding-bottom: 20px;
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.topo h1 {
-  margin: 20px 0 10px;
-  font-size: 32px;
+  padding: 0 0 20px 0;
+  margin: 0 0 24px 0;
 }
 
 .topo p {
-  margin: 0;
-  font-size: 16px;
+  font-size: var(--body-font);
+  line-height: 1.35;
+  margin: 4px 0;
 }
 
-/* Garante tamanho e corte igual nas imagens do carrossel */
+.site-url { opacity: 0.95; }
+.endereco  { opacity: 0.85; }
+.endereco--bottom, .site-url--bottom { font-size: clamp(14px, 2.2vw, 16px); }
+
+/* ===== Carrossel ===== */
 .carousel,
 .carousel-inner,
 .carousel-item,
 .carousel-img {
-  height: 250px;
-  max-height: 250px;
+  height: var(--carousel-h);
+  max-height: var(--carousel-h);
   overflow: hidden;
-  margin-bottom: 40px;
 }
+
+.carousel-inner { margin: 0 !important; padding: 0 !important; }
+.carousel-item   { margin: 0 !important; padding: 0 !important; background: #000; }
 
 .carousel-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  display: block;
+  object-fit: cover;        /* recorta mantendo proporção */
+  object-position: center;  /* foca no centro */
 }
 
-/* Transição super suave com fade */
+/* Efeito fade suave */
 .carousel-fade .carousel-item {
   opacity: 0;
-  transition: opacity 2.5s ease;
-  transition-property: opacity;
-  z-index: 0;
+  transition: opacity 2.2s ease;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0; /* top/right/bottom/left:0 */
 }
-
 .carousel-fade .carousel-item.active {
   opacity: 1;
   position: relative;
-  z-index: 1;
 }
 
-
-/* Centralização da logomarca */
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 25px 0 25px 0;
-}
-
-.logo-img {
-  max-width: 220px;
-  width: 90%;
-  height: auto;
-}
-
+/* ===== Botões ===== */
 .buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 30px auto;
-  background-color: #000;
+  gap: 12px;                 /* espaço consistente entre botões */
+  margin: 22px auto 26px;
+  width: 100%;
+  max-width: 640px;
+  padding: 0 14px;
 }
 
 .buttons a {
-  display: block;
-  margin: 25px 0;
-  padding: 15px;
-  background-color: #e52a18;
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  width: 85%;
-  max-width: 350px;
-  font-size: 18px;
-}
-
-.buttons a:hover {
-  background-color: #75b834;
-}
-
-/* .formulario {
-  padding: 20px;
-}
-
-.formulario h2,
-.map h2 {
-  margin: 8px 0;
-  text-align: center;
-  color: white;
-}
-
-.formulario form {
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
   align-items: center;
-}
-
-.formulario input,
-.formulario button {
-  margin: 8px 0;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.formulario button {
-  background-color: #8B0000;
-  color: white;
-  border: none;
-  cursor: pointer;
-} */
-
-/* .formulario button:hover {
+  justify-content: center;
+  gap: 10px;                 /* espaço entre emoji e label */
+  width: 100%;
+  min-height: 52px;          /* área de toque confortável (>=44px) */
+  padding: 14px 16px;
+  border-radius: 12px;
   background-color: #e52a18;
-} */
+  color: #fff;
+  text-decoration: none;
+  font-size: var(--btn-font);
+  line-height: 1.2;
+  font-weight: 600;
+  transition: transform .08s ease, opacity .2s ease, background-color .2s ease;
+}
 
+.buttons a:active { transform: scale(0.98); }
+.buttons a:hover  { background-color: #f03b2a; }
+
+.buttons .emoji { 
+  font-size: var(--emoji-font);
+  line-height: 1;
+  display: inline-block;
+}
+.buttons .label {
+  display: inline-block;
+  white-space: nowrap;       /* evita quebra feia no meio do texto/emoji */
+}
+
+/* ===== Logomarca ===== */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 26px 0 20px 0;
+  padding: 0 14px;
+}
+.logo-img {
+  width: min(220px, 60vw);
+  height: auto;
+  display: block;
+}
+
+/* ===== Mapa ===== */
 .map {
-  margin: 60px 0 120px 0;
+  margin: 44px auto 120px;
   text-align: center;
+  padding: 0 14px;
+  max-width: 900px;
 }
 
 .map h2 {
-  font-size: 28px;
+  font-size: clamp(20px, 5.2vw, 28px);
   color: #e52a18;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .map iframe {
-  width: 90%;
+  width: 100%;
   max-width: 700px;
-  height: 400px;
+  height: clamp(260px, 45vh, 400px);
   border: 4px solid #e52a18;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #000; /* previne flashes brancos */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Evita margens brancas do carrossel */
+/* ===== Ajustes gerais e anti “faixa branca” ===== */
 .carousel,
 .carousel-inner,
 .carousel-item,
@@ -798,12 +162,23 @@ body > * {
   background-color: #000 !important;
 }
 
-.carousel-inner {
-  padding: 0 !important;
-  margin: 0 !important;
+/* ===== Mobile fino (até 380px) ===== */
+@media (max-width: 380px) {
+  :root {
+    --carousel-h: clamp(170px, 38vh, 240px);
+    --emoji-font: clamp(22px, 7vw, 28px);
+  }
+  .buttons { gap: 10px; }
+  .buttons a { min-height: 50px; padding: 12px 14px; }
 }
 
-.carousel-item {
-  padding: 0 !important;
-  margin: 0 !important;
+/* ===== Telas grandes (>= 992px) ===== */
+@media (min-width: 992px) {
+  :root {
+    --carousel-h: clamp(220px, 35vh, 320px);
+    --btn-font: clamp(18px, 1.8vw, 22px);
+    --emoji-font: clamp(24px, 2.2vw, 30px);
+  }
+  .buttons { max-width: 720px; }
+  .logo-img { width: min(260px, 28vw); }
 }
